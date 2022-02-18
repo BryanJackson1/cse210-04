@@ -1,6 +1,3 @@
-from game.casting.actor import Actor
-
-
 class Artifact(Actor):
     """
     An item of cultural or historical interest. 
@@ -11,8 +8,7 @@ class Artifact(Actor):
         _message (string): A short description about the artifact.
     """
     def __init__(self):
-        super().__init__()
-        self._message = ""
+        """define properties"""
         
     def get_message(self):
         """Gets the artifact's message.
@@ -20,7 +16,6 @@ class Artifact(Actor):
         Returns:
             string: The message.
         """
-        return self._message
     
     def set_message(self, message):
         """Updates the message to the given one.
