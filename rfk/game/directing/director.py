@@ -15,6 +15,8 @@ class Director:
             keyboard_service (KeyboardService): An instance of KeyboardService.
             video_service (VideoService): An instance of VideoService.
         """
+        self._keyboard_service = keyboard_service
+        self._video_service = video_service
 
         
     def start_game(self, cast):
@@ -23,6 +25,12 @@ class Director:
         Args:
             cast (Cast): The cast of actors.
         """
+        self._video_service.open_window()
+        while self._video_service.is_window_open():
+            self._get_inputs(cast)
+            self._do_updates(cast)
+            self._do_outputs(cast)
+        self._video_service.close_window()
 
 
     def _get_inputs(self, cast):
@@ -31,7 +39,10 @@ class Director:
         Args:
             cast (Cast): The cast of actors.
         """
-    
+        robot = cast.get_first_actor("robots")
+        velocity = self._keyboard_service.get_direction()
+        robot.set_velocity(velocity)        
+   
 
     def _do_updates(self, cast):
         """Updates the robot's position and resolves any collisions with artifacts.
@@ -47,3 +58,7 @@ class Director:
         Args:
             cast (Cast): The cast of actors.
         """
+        self._video_service.clear_buffer()
+        actors = cast.get_all_actors()
+        self._video_service.draw_actors(actors)
+        self._video_service.flush_buffer()
