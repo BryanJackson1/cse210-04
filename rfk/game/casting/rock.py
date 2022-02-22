@@ -1,3 +1,5 @@
+from game.casting.actor import Actor
+
 class Rock(Actor):
     """
     A destructive actor. Subtracts one from the player when hit

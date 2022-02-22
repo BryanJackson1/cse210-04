@@ -1,3 +1,5 @@
+from game.casting.actor import Actor
+
 class Gem(Actor):
     """
     An item of value. 
