@@ -71,11 +71,17 @@ def main():
         
 
 #TODO change from artifact to gem and rock
-        artifact = Artifact()
-        artifact.set_font_size(FONT_SIZE)
-        artifact.set_color(color)
-        artifact.set_position(position)
-        cast.add_actor("artifacts", artifact)
+        gem = Gem()
+        gem.set_font_size(FONT_SIZE)
+        gem.set_color(color)
+        gem.set_position(position)
+        cast.add_actor("gems", gem)
+
+        rock = Rock()
+        rock.set_font_size(FONT_SIZE)
+        rock.set_color(color)
+        rock.set_position(position)
+        cast.add_actor("rocks", rock)
     
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)
