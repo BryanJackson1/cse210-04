@@ -44,7 +44,7 @@ def main():
 #TODO change from robot to player
     # create the robot
     x = int(MAX_X / 2)
-    y = int(MAX_Y / 2)
+    y = MAX_Y - CELL_SIZE
     position = Point(x, y)
 
 #TODO change from robot to player
@@ -61,7 +61,7 @@ def main():
         gem = Gem()
 
         x = random.randint(1, COLS - 1)
-        y = 1
+        y = 0 #Start at the top
         position = Point(x, y)
         position = position.scale(CELL_SIZE)
 
@@ -83,7 +83,7 @@ def main():
         rock = Rock()
 
         x = random.randint(1, COLS - 1)
-        y = 1
+        y = 0
         position = Point(x, y)
         position = position.scale(CELL_SIZE)
 
