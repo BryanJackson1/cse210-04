@@ -24,7 +24,8 @@ COLS = 60
 ROWS = 40
 CAPTION = "Greed"
 WHITE = Color(255, 255, 255)
-DEFAULT_ARTIFACTS = 40
+DEFAULT_GEMS = 10
+DEFAULT_ROCKS = 10
 
 
 def main():
@@ -56,11 +57,11 @@ def main():
     
     # create the artifacts
 #TODO change from artifact to gem and rock
-    for n in range(DEFAULT_ARTIFACTS): 
-        text = chr(random.randint(33, 126))
+    for n in range(DEFAULT_GEMS): 
+        gem = Gem()
 
         x = random.randint(1, COLS - 1)
-        y = random.randint(1, ROWS - 1)
+        y = 1
         position = Point(x, y)
         position = position.scale(CELL_SIZE)
 
@@ -68,20 +69,35 @@ def main():
         g = random.randint(0, 255)
         b = random.randint(0, 255)
         color = Color(r, g, b)
-        
-
-#TODO change from artifact to gem and rock
-        gem = Gem()
+        gem.set_text("*")
         gem.set_font_size(FONT_SIZE)
         gem.set_color(color)
         gem.set_position(position)
         cast.add_actor("gems", gem)
+        
 
+#TODO change from artifact to gem and rock
+
+
+    for n in range(DEFAULT_ROCKS): 
         rock = Rock()
+
+        x = random.randint(1, COLS - 1)
+        y = 1
+        position = Point(x, y)
+        position = position.scale(CELL_SIZE)
+
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        color = Color(r, g, b)
+        rock.set_text("O")
         rock.set_font_size(FONT_SIZE)
         rock.set_color(color)
         rock.set_position(position)
         cast.add_actor("rocks", rock)
+
+
     
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)

@@ -17,5 +17,8 @@ class Rock(Actor):
         direction = Point(0, -1)
         direction = direction.scale(self._cell_size)
         return direction
+
+    def get_text(self):
+        return self._text
         
     
