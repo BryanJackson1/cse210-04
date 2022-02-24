@@ -53,13 +53,10 @@ class Director:
         banner = cast.get_first_actor("banners")
         robot = cast.get_first_actor("robots")
         actors = cast.get_all_actors()
-        rock = cast.get_first_actor("rocks")
         banner.set_text("")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
-        robot.move_next(max_x, max_y)
         
-        rock.move_next(max_x, max_y)
         for actor in actors:
             actor.move_next(max_x, max_y)
         """for gem in gems:  #Maybe rework this for the scoring detection.
