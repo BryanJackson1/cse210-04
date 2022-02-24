@@ -15,7 +15,7 @@ from game.shared.color import Color
 from game.shared.point import Point
 
 
-FRAME_RATE = 12
+FRAME_RATE = 30
 MAX_X = 900
 MAX_Y = 600
 CELL_SIZE = 15
@@ -24,8 +24,8 @@ COLS = 60
 ROWS = 40
 CAPTION = "Greed"
 WHITE = Color(255, 255, 255)
-DEFAULT_GEMS = 10
-DEFAULT_ROCKS = 10
+DEFAULT_GEMS = 4
+DEFAULT_ROCKS = 4
 
 
 def main():
@@ -49,7 +49,7 @@ def main():
 
 #TODO change from robot to player
     robot = Actor()
-    robot.set_text("#")
+    robot.set_text("| }-{ |")
     robot.set_font_size(FONT_SIZE)
     robot.set_color(WHITE)
     robot.set_position(position)
@@ -76,11 +76,51 @@ def main():
         velocity = gem.get_velocity()
         gem.set_velocity(velocity)
         cast.add_actor("gems", gem)
+
+    for n in range(DEFAULT_GEMS): 
+        gem = Gem()
+
+        x = random.randint(1, COLS - 1)
+        y = 0 #Start at the top
+        position = Point(x, y)
+        position = position.scale(CELL_SIZE)
+
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        color = Color(r, g, b)
+        gem.set_text("*")
+        gem.set_font_size(FONT_SIZE)
+        gem.set_color(color)
+        gem.set_position(position)
+        velocity = gem.get_velocity2()
+        gem.set_velocity(velocity)
+        cast.add_actor("gems", gem)
+
+    for n in range(DEFAULT_GEMS): 
+        gem = Gem()
+
+        x = random.randint(1, COLS - 1)
+        y = 0 #Start at the top
+        position = Point(x, y)
+        position = position.scale(CELL_SIZE)
+
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        color = Color(r, g, b)
+        gem.set_text("*")
+        gem.set_font_size(FONT_SIZE)
+        gem.set_color(color)
+        gem.set_position(position)
+        velocity = gem.get_velocity3()
+        gem.set_velocity(velocity)
+        cast.add_actor("gems", gem)
         
 
 #TODO change from artifact to gem and rock
 
-
+     
     for n in range(DEFAULT_ROCKS): 
         rock = Rock()
 
@@ -100,8 +140,49 @@ def main():
         velocity = rock.get_velocity()
         rock.set_velocity(velocity)
         cast.add_actor("rocks", rock)
+    
+    for n in range(DEFAULT_ROCKS): 
+        rock = Rock()
+
+        x = random.randint(1, COLS - 1)
+        y = 0
+        position = Point(x, y)
+        position = position.scale(CELL_SIZE)
+
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        color = Color(r, g, b)
+        rock.set_text("O")
+        rock.set_font_size(FONT_SIZE)
+        rock.set_color(color)
+        rock.set_position(position)
+        velocity = rock.get_velocity2()
+        rock.set_velocity(velocity)
+        cast.add_actor("rocks", rock)
+
+    for n in range(DEFAULT_ROCKS): 
+        rock = Rock()
+
+        x = random.randint(1, COLS - 1)
+        y = 0
+        position = Point(x, y)
+        position = position.scale(CELL_SIZE)
+
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        color = Color(r, g, b)
+        rock.set_text("O")
+        rock.set_font_size(FONT_SIZE)
+        rock.set_color(color)
+        rock.set_position(position)
+        velocity = rock.get_velocity3()
+        rock.set_velocity(velocity)
+        cast.add_actor("rocks", rock)
 
 
+    
     
     # start the game
     keyboard_service = KeyboardService(CELL_SIZE)

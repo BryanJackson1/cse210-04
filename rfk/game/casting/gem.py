@@ -1,6 +1,6 @@
 from game.casting.actor import Actor
 from game.shared.point import Point
-
+from random import random
 class Gem(Actor):
     """
     An item of value. 
@@ -17,6 +17,16 @@ class Gem(Actor):
 
     def get_velocity(self):
         direction = Point(0, 1)
+        direction = direction.scale(self._cell_size)
+        return direction
+    
+    def get_velocity2(self):
+        direction = Point(0, 2)
+        direction = direction.scale(self._cell_size)
+        return direction
+    
+    def get_velocity3(self):
+        direction = Point(0, 3)
         direction = direction.scale(self._cell_size)
         return direction
 

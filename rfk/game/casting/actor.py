@@ -1,3 +1,4 @@
+from random import random
 from game.shared.color import Color
 from game.shared.point import Point
 
@@ -23,7 +24,7 @@ class Actor:
         self._color = Color(255, 255, 255)
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
-
+        
     def get_color(self):
         """Gets the actor's color as a tuple of three ints (r, g, b).
         
