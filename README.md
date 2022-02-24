@@ -36,3 +36,4 @@ root                    (project root folder)
 * # TODO: Add your name and email here
 Kwadjo Quarshie - qua21016@byui.edu
 Erin Engler - eng20015@byui.edu
+Joe McKenzie - Techncrypt@gmail.com
