@@ -50,6 +50,20 @@ class Director:
         Args:
             cast (Cast): The cast of actors.
         """
+        banner = cast.get_first_actor("banners")
+        robot = cast.get_first_actor("robots")
+
+        banner.set_text("")
+        max_x = self._video_service.get_width()
+        max_y = self._video_service.get_height()
+        robot.move_next(max_x, max_y)
+
+        
+        """for gem in gems:  #Maybe rework this for the scoring detection.
+            if robot.get_position().equals(gem.get_position()):
+                message = "Yopu got some points"
+                banner.set_text(message) 
+           """     
   
         
     def _do_outputs(self, cast):
