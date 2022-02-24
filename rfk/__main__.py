@@ -73,6 +73,8 @@ def main():
         gem.set_font_size(FONT_SIZE)
         gem.set_color(color)
         gem.set_position(position)
+        velocity = gem.get_velocity()
+        gem.set_velocity(velocity)
         cast.add_actor("gems", gem)
         
 
@@ -95,6 +97,8 @@ def main():
         rock.set_font_size(FONT_SIZE)
         rock.set_color(color)
         rock.set_position(position)
+        velocity = rock.get_velocity()
+        rock.set_velocity(velocity)
         cast.add_actor("rocks", rock)
 
 
