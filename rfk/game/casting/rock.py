@@ -17,17 +17,17 @@ class Rock(Actor):
         
 
     def get_velocity(self):
-        direction = Point(0,5)
+        direction = Point(0,1)
         direction = direction.scale(self._cell_size)
         return direction
 
     def get_velocity2(self):
-        direction = Point(0, 6)
+        direction = Point(0, 3)
         direction = direction.scale(self._cell_size)
         return direction
 
     def get_velocity3(self):
-        direction = Point(0, 4)
+        direction = Point(0, 5)
         direction = direction.scale(self._cell_size)
         return direction
 

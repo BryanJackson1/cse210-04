@@ -21,7 +21,7 @@ class Gem(Actor):
         return direction
     
     def get_velocity2(self):
-        direction = Point(0, 2)
+        direction = Point(0, 3)
         direction = direction.scale(self._cell_size)
         return direction
     
