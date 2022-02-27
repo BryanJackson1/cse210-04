@@ -56,6 +56,8 @@ class Director:
         banner.set_text("")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
+        gem = cast.get_actors("gems")
+        rock = cast.get_actors("rocks")
         
         for actor in actors:
             actor.move_next(max_x, max_y)
@@ -64,10 +66,18 @@ class Director:
                 cast.remove_actor(cast, actor)
 
     """for gem in gems:  #Maybe rework this for the scoring detection.
+        
+        for gem in gem:  #Maybe rework this for the scoring detection.
             if robot.get_position().equals(gem.get_position()):
-                message = "You got some points"
+                message = "You got 1 point!"
                 banner.set_text(message) 
         """     
+        
+        for rock in rock:  #Maybe rework this for the scoring detection.
+            if robot.get_position().equals(rock.get_position()):
+                message = "You lost 1 points"
+                banner.set_text(message)
+           
   
         
     def _do_outputs(self, cast):
