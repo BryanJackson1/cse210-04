@@ -37,3 +37,4 @@ root                    (project root folder)
 Kwadjo Quarshie - qua21016@byui.edu
 Erin Engler - eng20015@byui.edu
 Joe McKenzie - Techncrypt@gmail.com
+Jeremy Shelby - jeremy_shelby@hotmail.com
