@@ -16,7 +16,7 @@ class Director:
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service
-
+        self._points = 0
         
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
@@ -51,7 +51,6 @@ class Director:
         banner = cast.get_first_actor("banners")
         robot = cast.get_first_actor("robots")
         actors = cast.get_all_actors()
-        points = 0
         # banner.set_text(f"You have {points} points")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
@@ -63,13 +62,13 @@ class Director:
         
         for gem in gem:  #Maybe rework this for the scoring detection.
             if robot.get_position().equals(gem.get_position()):
-                points += 1
-                banner.set_text(f"You have {points} points")
+                self._points += 1
+                banner.set_text(f"You have {self._points} points")
         
         for rock in rock:  #Maybe rework this for the scoring detection.
             if robot.get_position().equals(rock.get_position()):
-                points -= 1
-                banner.set_text(f"You have {points} points")
+                self._points -= 1
+                banner.set_text(f"You have {self._points} points")
            
   
         
