@@ -2,7 +2,6 @@ class Director:
     """A person who directs the game. 
     
     The responsibility of a Director is to control the sequence of play.
-
     Attributes:
         _keyboard_service (KeyboardService): For getting directional input.
         _video_service (VideoService): For providing video output.
@@ -21,7 +20,6 @@ class Director:
         
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
-
         Args:
             cast (Cast): The cast of actors.
         """
@@ -68,7 +66,7 @@ class Director:
                 points += 1
                 banner.set_text(f"You have {points} points")
         
-        for rock in rock:  
+        for rock in rock:  #Maybe rework this for the scoring detection.
             if robot.get_position().equals(rock.get_position()):
                 points -= 1
                 banner.set_text(f"You have {points} points")
