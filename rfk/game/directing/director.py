@@ -53,7 +53,8 @@ class Director:
         banner = cast.get_first_actor("banners")
         robot = cast.get_first_actor("robots")
         actors = cast.get_all_actors()
-        banner.set_text("")
+        points = 0
+        banner.set_text(f"You have {points} points")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         gem = cast.get_actors("gems")
@@ -64,13 +65,13 @@ class Director:
         
         for gem in gem:  #Maybe rework this for the scoring detection.
             if robot.get_position().equals(gem.get_position()):
-                message = "You got 1 point!"
-                banner.set_text(message) 
+                points += 1
+                banner.set_text(f"You have {points} points")
         
         for rock in rock:  #Maybe rework this for the scoring detection.
             if robot.get_position().equals(rock.get_position()):
-                message = "You lost 1 points"
-                banner.set_text(message)
+                points -= 1
+                banner.set_text(f"You have {points} points")
            
   
         
