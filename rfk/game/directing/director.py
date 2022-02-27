@@ -54,7 +54,7 @@ class Director:
         robot = cast.get_first_actor("robots")
         actors = cast.get_all_actors()
         points = 0
-        banner.set_text(f"You have {points} points")
+        # banner.set_text(f"You have {points} points")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         gem = cast.get_actors("gems")
@@ -68,7 +68,7 @@ class Director:
                 points += 1
                 banner.set_text(f"You have {points} points")
         
-        for rock in rock:  #Maybe rework this for the scoring detection.
+        for rock in rock:  
             if robot.get_position().equals(rock.get_position()):
                 points -= 1
                 banner.set_text(f"You have {points} points")
