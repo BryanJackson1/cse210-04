@@ -61,7 +61,6 @@ class Director:
         
         for actor in actors:
             actor.move_next(max_x, max_y)
-
             if actor._position.get_y() == max_y:
                 cast.remove_actor(cast, actor)
         
