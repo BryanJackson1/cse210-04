@@ -59,11 +59,15 @@ class Director:
         
         for actor in actors:
             actor.move_next(max_x, max_y)
-        """for gem in gems:  #Maybe rework this for the scoring detection.
+
+            if actor._position.get_y() == max_y:
+                cast.remove_actor(cast, actor)
+
+    """for gem in gems:  #Maybe rework this for the scoring detection.
             if robot.get_position().equals(gem.get_position()):
                 message = "You got some points"
                 banner.set_text(message) 
-           """     
+        """     
   
         
     def _do_outputs(self, cast):
