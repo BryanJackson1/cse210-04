@@ -64,14 +64,6 @@ class Director:
 
             if actor._position.get_y() == max_y:
                 cast.remove_actor(cast, actor)
-
-    """for gem in gems:  #Maybe rework this for the scoring detection.
-        
-        for gem in gem:  #Maybe rework this for the scoring detection.
-            if robot.get_position().equals(gem.get_position()):
-                message = "You got 1 point!"
-                banner.set_text(message) 
-        """     
         
         for rock in rock:  #Maybe rework this for the scoring detection.
             if robot.get_position().equals(rock.get_position()):
