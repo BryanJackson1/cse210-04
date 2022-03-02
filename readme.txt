@@ -1,6 +1,6 @@
 Starting Readme file
 
-test joe2
+test joe3
 
 Notes from Erin-
 add velocity to actor class
