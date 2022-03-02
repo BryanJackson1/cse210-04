@@ -56,131 +56,35 @@ def main():
     cast.add_actor("robots", robot)
     
     # create the artifacts
+    
 #TODO change from artifact to gem and rock
-    for n in range(DEFAULT_GEMS): 
-        gem = Gem()
+    for n in range(DEFAULT_ROCKS): 
+        rock = Rock(COLS, CELL_SIZE, FONT_SIZE, 1)
+        cast.add_actor("rocks", rock)
 
-        x = random.randint(1, COLS - 1)
-        y = 0 #Start at the top
-        position = Point(x, y)
-        position = position.scale(CELL_SIZE)
+    for n in range(DEFAULT_ROCKS): 
+        rock = Rock(COLS, CELL_SIZE, FONT_SIZE, 2)
+        cast.add_actor("rocks", rock)
 
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-        color = Color(r, g, b)
-        gem.set_text("*")
-        gem.set_font_size(FONT_SIZE)
-        gem.set_color(color)
-        gem.set_position(position)
-        velocity = gem.get_velocity()
-        gem.set_velocity(velocity)
-        cast.add_actor("gems", gem)
-
-    for n in range(DEFAULT_GEMS): 
-        gem = Gem()
-
-        x = random.randint(1, COLS - 1)
-        y = 0 #Start at the top
-        position = Point(x, y)
-        position = position.scale(CELL_SIZE)
-
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-        color = Color(r, g, b)
-        gem.set_text("*")
-        gem.set_font_size(FONT_SIZE)
-        gem.set_color(color)
-        gem.set_position(position)
-        velocity = gem.get_velocity2()
-        gem.set_velocity(velocity)
-        cast.add_actor("gems", gem)
-
-    for n in range(DEFAULT_GEMS): 
-        gem = Gem()
-
-        x = random.randint(1, COLS - 1)
-        y = 0 #Start at the top
-        position = Point(x, y)
-        position = position.scale(CELL_SIZE)
-
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-        color = Color(r, g, b)
-        gem.set_text("*")
-        gem.set_font_size(FONT_SIZE)
-        gem.set_color(color)
-        gem.set_position(position)
-        velocity = gem.get_velocity3()
-        gem.set_velocity(velocity)
-        cast.add_actor("gems", gem)
+    for n in range(DEFAULT_ROCKS): 
+        rock = Rock(COLS, CELL_SIZE, FONT_SIZE, 3)
+        cast.add_actor("rocks", rock)
         
 
 #TODO change from artifact to gem and rock
 
-     
-    for n in range(DEFAULT_ROCKS): 
-        rock = Rock()
+    for n in range(DEFAULT_GEMS): 
+        gem = Gem(COLS, CELL_SIZE, FONT_SIZE, 1)
+        cast.add_actor("gems", gem)
 
-        x = random.randint(1, COLS - 1)
-        y = 0
-        position = Point(x, y)
-        position = position.scale(CELL_SIZE)
+    for n in range(DEFAULT_GEMS): 
+        gem = Gem(COLS, CELL_SIZE, FONT_SIZE, 2)
+        cast.add_actor("gems", gem)
 
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-        color = Color(r, g, b)
-        rock.set_text("O")
-        rock.set_font_size(FONT_SIZE)
-        rock.set_color(color)
-        rock.set_position(position)
-        velocity = rock.get_velocity()
-        rock.set_velocity(velocity)
-        cast.add_actor("rocks", rock)
-    
-    for n in range(DEFAULT_ROCKS): 
-        rock = Rock()
-
-        x = random.randint(1, COLS - 1)
-        y = 0
-        position = Point(x, y)
-        position = position.scale(CELL_SIZE)
-
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-        color = Color(r, g, b)
-        rock.set_text("O")
-        rock.set_font_size(FONT_SIZE)
-        rock.set_color(color)
-        rock.set_position(position)
-        velocity = rock.get_velocity2()
-        rock.set_velocity(velocity)
-        cast.add_actor("rocks", rock)
-
-    for n in range(DEFAULT_ROCKS): 
-        rock = Rock()
-
-        x = random.randint(1, COLS - 1)
-        y = 0
-        position = Point(x, y)
-        position = position.scale(CELL_SIZE)
-
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-        color = Color(r, g, b)
-        rock.set_text("O")
-        rock.set_font_size(FONT_SIZE)
-        rock.set_color(color)
-        rock.set_position(position)
-        velocity = rock.get_velocity3()
-        rock.set_velocity(velocity)
-        cast.add_actor("rocks", rock)
-
+    for n in range(DEFAULT_GEMS): 
+        gem = Gem(COLS, CELL_SIZE, FONT_SIZE, 3)
+        cast.add_actor("gems", gem)
+   
 
     
     
