@@ -15,7 +15,7 @@ from game.shared.color import Color
 from game.shared.point import Point
 
 
-FRAME_RATE = 10
+FRAME_RATE = 8
 MAX_X = 900
 MAX_Y = 600
 CELL_SIZE = 15
@@ -24,8 +24,8 @@ COLS = 60
 ROWS = 40
 CAPTION = "Greed"
 WHITE = Color(255, 255, 255)
-DEFAULT_GEMS = 4
-DEFAULT_ROCKS = 4
+DEFAULT_GEMS = 20
+DEFAULT_ROCKS = 20
 
 
 def main():
@@ -56,35 +56,17 @@ def main():
     cast.add_actor("robots", robot)
     
     # create the artifacts
-    
-#TODO change from artifact to gem and rock
+
     for n in range(DEFAULT_ROCKS): 
         rock = Rock(COLS, CELL_SIZE, FONT_SIZE, 1)
         cast.add_actor("rocks", rock)
 
-    for n in range(DEFAULT_ROCKS): 
-        rock = Rock(COLS, CELL_SIZE, FONT_SIZE, 2)
-        cast.add_actor("rocks", rock)
+   
 
-    for n in range(DEFAULT_ROCKS): 
-        rock = Rock(COLS, CELL_SIZE, FONT_SIZE, 3)
-        cast.add_actor("rocks", rock)
-        
-
-#TODO change from artifact to gem and rock
 
     for n in range(DEFAULT_GEMS): 
         gem = Gem(COLS, CELL_SIZE, FONT_SIZE, 1)
         cast.add_actor("gems", gem)
-
-    for n in range(DEFAULT_GEMS): 
-        gem = Gem(COLS, CELL_SIZE, FONT_SIZE, 2)
-        cast.add_actor("gems", gem)
-
-    for n in range(DEFAULT_GEMS): 
-        gem = Gem(COLS, CELL_SIZE, FONT_SIZE, 3)
-        cast.add_actor("gems", gem)
-   
 
     
     
