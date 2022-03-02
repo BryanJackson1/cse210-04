@@ -22,8 +22,8 @@ class Gem(Actor):
     def __init__(self, cols, cell_size, font_size, velocity_factor):
         """define properties"""
         self._text = "O"
-        x = random.randint(1, COLS - 1)
-        y = 0 #Start at the top
+        x = random.randrange(0, MAX_X)
+        y = random.randrange(0, MAX_Y)
         position = Point(x, y)
         
         position = position.scale(CELL_SIZE)

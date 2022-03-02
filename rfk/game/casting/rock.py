@@ -20,8 +20,8 @@ class Rock(Actor):
     def __init__(self, cols, cell_size, font_size, velocity_factor):
         """define properties"""
         self._text = "O"
-        x = random.randint(1, COLS - 1)
-        y = 0 #Start at the top
+        x = random.randrange(0, MAX_X)
+        y = random.randrange(0, MAX_Y)
         position = Point(x, y)
         
         position = position.scale(CELL_SIZE)
@@ -30,7 +30,7 @@ class Rock(Actor):
         g = random.randint(0, 255)
         b = random.randint(0, 255)
         color = Color(r, g, b)
-        self.set_text("H")
+        self.set_text("O")
         self.set_font_size(FONT_SIZE)
         self.set_color(color)
         self.set_position(position)
