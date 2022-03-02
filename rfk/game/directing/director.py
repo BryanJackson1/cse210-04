@@ -60,15 +60,19 @@ class Director:
         for actor in actors:
             actor.move_next(max_x, max_y)
         
-        for gem in gem:  #Maybe rework this for the scoring detection.
+        for gem in gem:  
             if robot.get_position().equals(gem.get_position()):
                 self._points += 1
                 banner.set_text(f"You have {self._points} points")
+                cast.remove_actor("gem", gem)
+
+                
         
-        for rock in rock:  #Maybe rework this for the scoring detection.
+        for rock in rock:  
             if robot.get_position().equals(rock.get_position()):
                 self._points -= 1
                 banner.set_text(f"You have {self._points} points")
+                cast.remove_actor("rock", rock)
            
   
         
