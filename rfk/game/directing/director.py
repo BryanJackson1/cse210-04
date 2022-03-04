@@ -64,7 +64,7 @@ class Director:
             if robot.get_position().equals(gem.get_position()):
                 self._points += 1
                 banner.set_text(f"You have {self._points} points")
-                cast.remove_actor("gem", gem)
+                cast.remove_actor("gems", gem)
 
                 
         
@@ -72,7 +72,7 @@ class Director:
             if robot.get_position().equals(rock.get_position()):
                 self._points -= 1
                 banner.set_text(f"You have {self._points} points")
-                cast.remove_actor("rock", rock)
+                cast.remove_actor("rocks", rock)
            
   
         
