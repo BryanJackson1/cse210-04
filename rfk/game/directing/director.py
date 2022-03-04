@@ -1,3 +1,10 @@
+from game.casting.gem import Gem
+from game.casting.rock import Rock
+
+CELL_SIZE = 15
+FONT_SIZE = 15
+COLS = 60
+
 class Director:
     """A person who directs the game. 
     
@@ -65,6 +72,8 @@ class Director:
                 self._points += 1
                 banner.set_text(f"You have {self._points} points")
                 cast.remove_actor("gems", gem)
+                gem = Gem(COLS, CELL_SIZE, FONT_SIZE, 1)
+                cast.add_actor("gems", gem)
 
                 
         
@@ -73,6 +82,8 @@ class Director:
                 self._points -= 1
                 banner.set_text(f"You have {self._points} points")
                 cast.remove_actor("rocks", rock)
+                rock = Rock(COLS, CELL_SIZE, FONT_SIZE, 1)
+                cast.add_actor("rocks", rock)
            
   
         
